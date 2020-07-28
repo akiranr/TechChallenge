@@ -5,34 +5,29 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using EShop.Models;
+using EShop.Interfaces;
 
 namespace server.Controllers
 {
     [ApiController]
     public class HomeController : ControllerBase
     {
-        private static readonly List<Product> Products = new List<Product>
-        {
-            new Product 
-            {
-                Id = 1,
-                Name = "P1",
-                Price = 100.0M
-            }
-        };
-
         private readonly ILogger<HomeController> _logger;
+        private readonly IStoreService _storeService;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger,
+                              IStoreService storeService)
         {
             _logger = logger;
+            _storeService = storeService;
         }
 
         [HttpGet]
         [Route("api/products")]
-        public IEnumerable<Product> GetAllProducts()
+        public async Task<IActionResult> GetAllProducts()
         {
-            return Products;
+            var data = await _storeService.GetAllProductsAsync();
+            return Ok(data);
         }
     }
 }
