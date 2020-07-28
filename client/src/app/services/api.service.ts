@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
 })
-export class EshopService {
+export class ApiService {
   private apiUrl = 'http://ec2-3-25-169-120.ap-southeast-2.compute.amazonaws.com/api/products';
   products: Array<Product> = [
     {
@@ -15,42 +15,42 @@ export class EshopService {
       price: 100
     },
     {
-      id: 1,
+      id: 2,
       name: "P2",
       price: 100
     },
     {
-      id: 1,
+      id: 3,
       name: "P3",
       price: 100
     },
     {
-      id: 1,
+      id: 4,
       name: "P4",
       price: 100
     },
     {
-      id: 1,
+      id: 5,
       name: "P5",
       price: 100
     },
     {
-      id: 1,
+      id: 6,
       name: "P6",
       price: 100
     },
     {
-      id: 1,
+      id: 7,
       name: "P7",
       price: 100
     },
     {
-      id: 1,
+      id: 8,
       name: "P8",
       price: 100
     },
     {
-      id: 1,
+      id: 9,
       name: "P9",
       price: 100
     },

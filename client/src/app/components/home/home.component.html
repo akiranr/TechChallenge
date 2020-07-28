@@ -1,5 +1,5 @@
 <div class="home">
-  <div class="card" *ngFor="let item of Products">
+  <div class="card" *ngFor="let item of storeService.products">
     <img src="https://via.placeholder.com/80">
     <div>
       {{ item.name }}
@@ -8,7 +8,7 @@
       {{ item.price }} &#36;
     </div>
     <div>
-      <button>Add to cart</button>
+      <button (click)="addToCart(item.id)">Add to cart</button>
     </div>
   </div>
 </div>

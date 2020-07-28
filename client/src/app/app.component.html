@@ -1,5 +1,6 @@
 <nav class="navbar">
   <a routerLink="/checkout" routerLinkActive="active">Checkout</a>
+  <span *ngIf="storeService.totalCheckoutItems > 0" class="count">{{ storeService.totalCheckoutItems }}</span>
 </nav>
 
 <router-outlet></router-outlet>

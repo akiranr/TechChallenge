@@ -1,1 +1,48 @@
-<p>checkout works!</p>
+<div class="checkout">
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Quantity</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of storeService.cart.items">
+                <td>
+                    {{ item.name }}
+                </td>
+                <td>
+                    {{ item.quantity }}
+                </td>
+                <td>
+                    {{ item.quantity * item.price }}
+                </td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="2">
+                    Total Price
+                </td>
+                <td>
+                    {{ storeService.totalOrderPrice }}
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    Shipping Cost
+                </td>
+                <td>
+                    {{ shippingCost }}
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+    <div>
+        <a routerLink="/thankyou" routerLinkActive="active">
+            <button (click)="placeOrder()">Place order</button>
+        </a>
+    </div>
+</div>
+<router-outlet></router-outlet>

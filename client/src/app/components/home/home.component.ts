@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Product } from 'src/app/models/product.model';
-import { EshopService } from "../../services/eshop.service";
+import { ApiService } from "../../services/api.service";
+import { StoreService } from "../../services/store.service";
 
 @Component({
   selector: 'home',
@@ -9,12 +10,15 @@ import { EshopService } from "../../services/eshop.service";
 })
 export class HomeComponent implements OnInit {
 
-  Products: Array<Product> = [];
-
-  constructor(private eshopService: EshopService) { }
+  constructor(private apiService: ApiService,
+              public storeService: StoreService) { }
 
   ngOnInit() {
-    this.eshopService.getAllProducts()
-    .subscribe(result => this.Products = result);
+    this.apiService.getAllProducts()
+    .subscribe(result => this.storeService.products = result);
+  }
+
+  addToCart(productId: number): void {
+    this.storeService.addToCart(productId);
   }
 }

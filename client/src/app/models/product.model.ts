@@ -1,5 +1,15 @@
+import { Provider } from '@angular/core';
+
 export interface Product {
-    id: number;
-    name: string;
-    price: number;
+    readonly id: number;
+    readonly name: string;
+    readonly price: number;
+}
+
+export interface Cart {
+    items: Array<OrderItem>;
+}
+
+export interface OrderItem extends Product {
+    quantity: number;
 }
