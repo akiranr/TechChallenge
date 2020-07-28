@@ -34,4 +34,8 @@ export class StoreService {
       this.cart.items.push(Object.assign({ quantity: 1 }, this.products.find(p => p.id == productId)));
     }
   }
+
+  removeFromCart(productId: number): void {
+    this.cart.items = this.cart.items.filter(c => c.id !== productId);
+  }
 }

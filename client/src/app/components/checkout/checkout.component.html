@@ -18,6 +18,7 @@
                 <td>
                     {{ item.quantity * item.price }}
                 </td>
+                <td><button (click)="removeFromCart(item.id)" class="removeitem">&#9747;</button></td>
             </tr>
         </tbody>
         <tfoot>

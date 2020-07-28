@@ -17,6 +17,10 @@ export class CheckoutComponent implements OnInit {
 
   }
 
+  removeFromCart(productId: number): void {
+    this.storeService.removeFromCart(productId);
+  }
+
   placeOrder() : void {
     let a = 10;
   }
