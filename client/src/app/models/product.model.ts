@@ -7,7 +7,7 @@ export interface Product {
 }
 
 export interface Cart {
-    items: Array<OrderItem>;
+    orderItems: Array<OrderItem>;
 }
 
 export interface OrderItem extends Product {

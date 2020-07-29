@@ -14,14 +14,30 @@ export class CheckoutComponent implements OnInit {
               public storeService: StoreService) { }
 
   ngOnInit(): void {
-
+    this.calculateShippingCost();
   }
 
   removeFromCart(productId: number): void {
     this.storeService.removeFromCart(productId);
+    this.calculateShippingCost();
   }
 
   placeOrder() : void {
-    let a = 10;
+    this.apiService.placeOrder(this.storeService.cart)
+    .subscribe((orderRefNo: number) => {
+      this.storeService.lastOrderReferenceNumber = orderRefNo;
+      this.storeService.emptyCart();
+    })
+  }
+
+  calculateShippingCost(): void {
+    if (this.storeService.isCartEmpty) {
+      return;
+    }
+
+    this.apiService.calculateShippingCost(this.storeService.cart)
+    .subscribe(result => {
+      this.shippingCost = result;
+    })
   }
 }
