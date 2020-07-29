@@ -1,5 +1,7 @@
 A simple online store to view and purchase products
 
+Demo URL - http://techchallenge-kiran.s3-website-ap-southeast-2.amazonaws.com/
+
 - The UI is a SPA built using the latest Angular hosted on AWS S3
 - The back-end is an ASP.Net Core WebAPI running in a docker container on an AWS EC2 instance
 
