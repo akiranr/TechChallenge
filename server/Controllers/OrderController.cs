@@ -37,7 +37,6 @@ namespace server.Controllers
         public async Task<IActionResult> PlaceOrder(Cart cart)
         {
             var orderReferenceNumber = await _orderService.PlaceOrderAsync(cart.OrderItems);
-
             return new ObjectResult(orderReferenceNumber) { StatusCode = StatusCodes.Status201Created };
         }
     }

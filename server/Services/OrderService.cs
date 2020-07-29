@@ -21,7 +21,8 @@ namespace EShop.Services
             var totalOrderPrice = (from p in products
                                     join o in orderItems on p.Id equals o.Id
                                     select o.Quantity * p.Price).Sum();
-
+            
+            // shipping cost to be 10$ if total price is less than 50, else 20$
             return totalOrderPrice <= 50 ? 10 : 20;
         }
 

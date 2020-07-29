@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class ApiService {
-  private apiBaseUrl = 'http://ec2-3-25-169-120.ap-southeast-2.compute.amazonaws.com/api';
+  private apiBaseUrl = 'http://ec2-54-79-3-34.ap-southeast-2.compute.amazonaws.com/api';
 
   constructor(private http: HttpClient) { }
 
