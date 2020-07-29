@@ -1,27 +1,6 @@
-# Eshop
-
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.4.
-
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+- The front-end for the online store is a SPA built using the latest Angular (CLI version 10.0.4)
+- Once initial load, the UI will fire off an API call to fetch Products
+- The user can add products to the cart by clicking on "Add to cart" button. The no of items added is shown beside the "Checkout" link
+- The checkout page lists the items added and also makes an API call to calculate the shipping cost.
+- Items can be removed - upon which the shipping cost will be recalculated
+- Order can be placed by clicking on "Place order" button and a reference number is generated from the back-end and displayed in the final page
